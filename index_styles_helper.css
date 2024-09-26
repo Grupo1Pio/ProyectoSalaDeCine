@@ -1,11 +1,12 @@
 .navegation{
-    margin-bottom: 70px;
+    margin-bottom: 77px;
 }
 
 .container_buttons{
 
     display: flex;
     justify-content: space-evenly;
+    
 }
 
 .items {
@@ -28,6 +29,7 @@
     height: 570px;
     margin: 0 auto;
     gap: 15px;
+    position: relative;
 }
 
 .template_poster{
@@ -38,13 +40,49 @@
     width: 57%;
     height: 99%;
     margin: 1px auto;
-    align-items: end;
+    align-items: baseline;
     box-shadow: 5px 5px 20px black;
     transition: transform 0.2s;
 }
+.labels_ESTRENO{
+    background-color: #0dcaf0;
+    position: absolute;
+    border-radius: 25%;
+    width: 80px;
+    height: 25px;
+    
+}
 
-.template_poster:hover{
+.labels_PREVENTA{
+    background-color: #4d0df0;
+    position: absolute;
+    border-radius: 25%;
+    width: 80px;
+    height: 25px;
+    
+}
+
+.labels_PRONTO{
+    background-color: #ff0000;
+    position: absolute;
+    border-radius: 25%;
+    width: 80px;
+    height: 25px;
+    
+}
+
+.h6_labels{
+    color: white;
+    text-align: center;
+    margin: 2px auto;
+    font-family:"Rajdhani";
+    font-weight: bolder;
+}
+
+.template_poster:hover, .logo_apolo:hover{
     transform: scale(1.10);
+    
+    
 }
 
 
@@ -54,6 +92,7 @@
     height: 97%;
     margin: auto auto;
     background-size: cover;
+    
 }
 
 .h6_posters{
@@ -63,6 +102,10 @@
     color: white;
 }
 
+.h6_posters:hover{
+    color:  #0d6efd;
+}
+
 
 
 .footer_template{
@@ -70,6 +113,7 @@
     grid-template-columns: repeat(4,1fr);
     height: 74;
     margin-top: 10px;
+    
 }
 
 .footer_peliculas, .footer_eventos, .footer_about_us, .footer_follow_us{
@@ -78,12 +122,19 @@
 }
 
 
+
 .footer_links{
     text-align: center;
     text-decoration: none;
     font-size:x-small;
     font-family:"Rajdhani";
-    
+    color: white;
+    transition: 0.2s;
+}
+
+.footer_links:hover{
+    color: #0d6efd;
+    text-indent: 5px;
 }
 
 .hg6_footer{
@@ -93,3 +144,4 @@
     margin-top: 4px;
     margin-bottom: -2px;
 }
+

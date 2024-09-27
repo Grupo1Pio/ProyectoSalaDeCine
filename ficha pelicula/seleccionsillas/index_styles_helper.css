@@ -16,23 +16,57 @@ html, body {
     margin: auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-.movie-title-poster {
-    flex: 1;
-    margin-right: 20px;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
-.movie-title-poster img {
-    width: 100%;
-    height: 83%;
+.movie-details {
+    width: 60%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
 }
-.synopsis {
-    flex: 1;
-    margin-right: 20px;
-    margin-top: 50px;
+.poster {
+    width: 50%; /* Ancho ajustado */
+    height: 50%; /* Alto ajustado */
+    background: #fff;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
-.technical-sheet {
-    flex: 1;
-    margin-left:50px;
-    margin-top: 50px;
+.poster img {
+    max-width: 105%;
+    max-height: 105%;
+    border-radius: 5px;
+}
+.seating {
+    width: 35%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.seating .seat {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.seating .seat.selected {
+    background-color: #6c757d;
+}
+.seating .seat:hover {
+    background-color: #b0b0b0;
 }
 
 
@@ -89,9 +123,3 @@ img{
     margin-bottom: 10px;
 }
 
-.salas-horarios{
-    display: table-row;
-    align-items: center;
-    width: 80%;
-    margin-left: 300px;
-}

@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+.navegation{
+    margin-bottom: 77px;
+}
+
+.logo_apolo:hover{
+    transform: scale(1.10);
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1200px;
+    justify-content: space-evenly;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    justify-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.movie-details h2{
+    font-family: "Bebas Neue";
+    margin-top: 8%;
+}
+
+.movie-details strong{
+    font-family: "Rajdhani";
+    font-size: larger;
+}
+
+.poster {
+    width: 60%; /* Ancho ajustado */
+    height: 60%; /* Alto ajustado */
+    background: #fff;
+    margin: 35px auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.poster img {
+    max-width: 105%;
+    max-height: 105%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px black; 
+}
+
+.poster_description h3{
+    margin-top: 2%;
+    
+}
+
+.seating {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 35%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.seating h3, .seating button{
+    font-family:"Rajdhani";
+}
+
+.seating .seat {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.selected{
+    border: 2px solid green;
+}
+
+.seating .seat:hover {
+    background-color: #b0b0b0;
+}
+
+
+/* Footer fijo al final de la página */
+.footer_template {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 74px;
+    margin-top: 10px;
+    color: white;
+    width: 100%; /* Asegura que ocupe todo el ancho de la página */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer_peliculas, .footer_eventos, .footer_about_us, .footer_follow_us {
+    display: grid;
+    height: 74px;
+}
+
+
+
+.footer_links {
+    text-align: center;
+    text-decoration: none;
+    font-size: x-small;
+    font-family: "Rajdhani";
+    color: white;
+    transition: 0.2s;
+}
+
+.footer_links:hover{
+    color: #0d6efd;
+    text-indent: 5px;
+}
+
+.hg6_footer{
+    text-align: center;
+    color: #0d6efd;
+    font-family:"Bebas Neue";
+    margin-top: 4px;
+    margin-bottom: -2px;
+}
+
+img{
+    border-radius: 10px;   
+}
+
+.container h1{
+    color: BL;
+    margin-bottom: 10px;
+}
+
+.seat{
+    background-image: url('../../Icons/silla.png');
+    background-size: cover;
+}

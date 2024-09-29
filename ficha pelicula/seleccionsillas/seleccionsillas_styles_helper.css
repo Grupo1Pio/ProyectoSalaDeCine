@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
+title{
+    font-family: "Rajdhani";
+}
 
 .navegation{
     margin-bottom: 77px;
@@ -91,7 +94,7 @@
 }
 
 .selected{
-    border: 2px solid green;
+    border: 2px solid rgb(25, 255, 8);
 }
 
 .seating .seat:hover {

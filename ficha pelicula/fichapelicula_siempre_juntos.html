@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de contacto</title>
+    <title>Ficha Pelicula</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="formulario_styles_helper.css">
+    <link rel="stylesheet" href="fichapelicula_styles_helper.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 </head>
+
 <body>
-    
     <div class="navegation">
         <nav class="h-15 navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
@@ -23,7 +23,7 @@
                     </button>
                 </div>
                 
-                <a href="../../index.html">
+                <a href="../index.html">
                 <div class="logo_apolo" style="margin-left: 100px">
                         <img src="../Icons/Logo Teatro Apolo.svg"  width="160" height="50">
                     </div>
@@ -49,13 +49,13 @@
                                 <a class="nav-link fw-bolder" aria-current="page" href="../index.html">CARTELERA</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bolder" href="../index.html">FICHA DE PELICULA</a>
+                                <a class="nav-link active fw-bolder" href="fichapelicula_siempre_juntos.html">FICHA DE PELICULA</a>
                             </li>
                             <li class="nav-item"></li>
-                                <a class="nav-link fw-bolder" href="../index.html">SELECCIONAR SILLAS</a>
+                                <a class="nav-link fw-bolder" href="seleccionsillas/seleccionsillas_siempre_juntos.html">SELECCIONAR SILLAS</a>
                             </li>
                             <li class="nav-item"></li>
-                                <a class="nav-link active fw-bolder" href="formulario.html">FORMULARIO DE CONTACTO</a>
+                                <a class="nav-link fw-bolder" href="../formulario/formulario.html">FORMULARIO DE CONTACTO</a>
                             </li>
                         </ul>
                     </div>
@@ -64,43 +64,40 @@
         </nav>
     </div>
     
-
-
+    
+    <div class="salas_horarios">
+        
+        <div class="sala1">
+            <h4 style="font-family:Rajdhani;font-weight: bolder;">SALA 1
+                <a href="seleccionsillas/seleccionsillas_siempre_juntos.html"><button class="hora btn btn-info">18:00</button></a>
+                <a href="seleccionsillas/seleccionsillas_siempre_juntos.html"><button class="hora btn btn-info">19:45</button></a>
+            </h4> 
+        </div>
+        <div class="sala2">
+            <h4 style="font-family:Rajdhani;font-weight: bolder;">SALA 2
+                <a href="seleccionsillas/seleccionsillas_siempre_juntos.html"><button class="hora btn btn-info">17:45</button></a>
+                <a href="seleccionsillas/seleccionsillas_siempre_juntos.html"><button class="hora btn btn-info">19:00</button></a>
+            </h4>
+        </div>
+    </div>
     <div class="container">
-        <h1>Formulario de contacto</h1>
-        <form id="contactForm">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name">
-            <div class="error" id="nameError"></div>
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <div class="error" id="emailError"></div>
-    
-            <label for="subject">Asunto:</label>
-            <select id="subject" name="subject">
-                <option value="OTRO MOTIVO">OTRO MOTIVO</option>
-                <option value="TRABAJA CON NOSOTROS">TRABAJA CON NOSOTROS</option>
-                <option value="OBJETOS PERDIDOS">OBJETOS PERDIDOS</option>
-                <option value="EMPRESAS">EMPRESAS</option>
-            </select>
-    
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message"></textarea>
-            <div class="error" id="messageError"></div>
-    
-            <label>
-                <input type="checkbox" id="consent"> He leído y doy consentimiento expreso a la política de privacidad.
-            </label>
-    
-            <button type="button" onclick="validateForm()">ENVIAR</button>
-        </form>
+        <div class="movie-title-poster">
+            <h2 style="font-family:Bebas Neue">SIEMPRE JUNTOS</h2>
+            <img src="../Icons/SiempreJuntos_poster.png" alt="Cartel de la película">
+        </div>
+        <div class="synopsis">
+            <h3 style="font-family:Bebas Neue">SINOPSIS</h3>
+            <p>La historia sigue a Max Bernal (Bobby Cannavale), un comediante que vive con su padre (Robert De Niro) mientras lucha por criar a su hijo autista, Ezra, con su ex esposa (Rose Byrne). Cuando se ven obligados a afrontar decisiones difíciles sobre el futuro de su hijo, Max y Ezra se embarcan en un viaje por el país que tiene un impacto trascendental en la vida de ambos.</p>
+            <a href="seleccionsillas/seleccionsillas_siempre_juntos.html"><img src="../Icons/cine.png" alt="SALA"></a>
+        </div>
+        <div class="technical-sheet">
+            <h3 style="font-family:Bebas Neue">FICHA TÉCNICA</h3>
+            <p><strong style="font-family: Rajdhani; font-size: larger">Género:</strong> Comedia, Drama.</p>
+            <p><strong style="font-family: Rajdhani; font-size: larger">Duración:</strong> 101 min.</p>
+            <p><strong style="font-family: Rajdhani; font-size: larger">Clasificación:</strong> Recomendada para Mayores de 7 años.</p>
+        </div>
     </div>
     
-    <script src="scriptformulario.js"></script>
-    
-    <div class="banner_form"></div>
-
     <div class="footer_template bg-dark">
         <div class="footer_peliculas">
             <h6 class="hg6_footer">PELÍCULAS</h6>

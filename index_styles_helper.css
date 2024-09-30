@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+.navegation{
+    margin-bottom: 77px;
+}
+
+.container_buttons{
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.items {
+    margin: 10px;
+    align-content: end;
+    
+}
+
+.calendario{
+    background: none; 
+}
+
+
+.container_posters{
+    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 3px ;
+    width: 90%;
+    height: 570px;
+    margin: 0 auto;
+    gap: 15px;
+    position: relative;
+}
+
+.template_poster{
+    
+    display: grid;
+    grid-template-rows: 1fr;
+    border-radius: 10px;  
+    width: 57%;
+    height: 99%;
+    margin: 1px auto;
+    align-items: baseline;
+    box-shadow: 5px 5px 20px black;
+    transition: transform 0.2s;
+}
+
+.template_poster:hover{
+    transform: scale(1.10);
+}
+
+.poster{
+    border-radius: 10px;
+    width: 97%;
+    height: 97%;
+    margin: auto auto;
+    background-size: cover;
+    
+}
+
+.labels_ESTRENO{
+    background-color: #0dcaf0;
+    position: absolute;
+    border-radius: 5px;
+    width: 80px;
+    height: 25px;
+    
+}
+
+.labels_PREVENTA{
+    background-color: #4d0df0;
+    position: absolute;
+    border-radius: 5px;
+    width: 80px;
+    height: 25px;
+    
+}
+
+.labels_PRONTO{
+    background-color: #ff0000;
+    position: absolute;
+    border-radius: 5px;
+    width: 80px;
+    height: 25px;
+    
+}
+
+.h6_labels{
+    color: white;
+    text-align: center;
+    margin: 2px auto;
+    font-family:"Rajdhani";
+    font-weight: bolder;
+}
+
+.h6_posters{
+    text-align: center;
+    font-family:"Bebas Neue";
+    margin-bottom: 1px;
+    color: white;
+}
+
+.h6_posters:hover{
+    color:  #0d6efd;
+}
+
+
+
+.footer_template{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    height: 74;
+    margin-top: 10px;
+    
+}
+
+.footer_peliculas, .footer_eventos, .footer_about_us, .footer_follow_us{
+    display: grid;
+    height: 74px;
+}
+
+
+
+.footer_links{
+    text-align: center;
+    text-decoration: none;
+    font-size:x-small;
+    font-family:"Rajdhani";
+    color: white;
+    transition: 0.2s;
+}
+
+.footer_links:hover{
+    color: #0d6efd;
+    text-indent: 5px;
+}
+
+.hg6_footer{
+    text-align: center;
+    color: #0d6efd;
+    font-family:"Bebas Neue";
+    margin-top: 4px;
+    margin-bottom: -2px;
+}
+

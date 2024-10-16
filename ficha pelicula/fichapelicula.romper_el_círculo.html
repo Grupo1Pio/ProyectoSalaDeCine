@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Pelicula</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="fichapelicula_styles_helper.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+
+<body>
+    <div class="navegation">
+        <nav class="h-15 navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <div class="d-flex  w-15 justify-content-end bg-dark">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                </div>
+                
+                <a href="../index.html">
+                <div class="logo_apolo" style="margin-left: 100px">
+                        <img src="../Icons/Logo Teatro Apolo.svg"  width="160" height="50">
+                    </div>
+                </a>
+                
+                <div class="d-flex ms-40 w-40 ">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 fw-bolder" type="search" placeholder="BUSCAR PELÍCULAS" aria-label="Search">
+                        <button class="btn btn-outline-info btn-lg fw-bolder " type="submit">🔍</button>
+                    </form>
+                </div>
+                <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title fw-bolder" id="offcanvasDarkNavbarLabel">MENÚ</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link fw-bolder" aria-current="page" href="../index.html">CARTELERA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active fw-bolder" href="fichapelicula.romper_el_círculo.html">FICHA DE PELICULA</a>
+                            </li>
+                            <li class="nav-item"></li>
+                                <a class="nav-link fw-bolder" href="seleccionsillas/seleccionsillas_romper_el_círculo.html">SELECCIONAR SILLAS</a>
+                            </li>
+                            <li class="nav-item"></li>
+                                <a class="nav-link fw-bolder" href="../formulario/formulario.html">FORMULARIO DE CONTACTO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    
+    <div class="salas_horarios">
+        
+        <div class="sala1">
+            <h4 style="font-family:Rajdhani;font-weight: bolder;">SALA 1
+                <a href="seleccionsillas/seleccionsillas_romper_el_círculo.html"><button class="hora btn btn-info">18:00</button></a>
+                <a href="seleccionsillas/seleccionsillas_romper_el_círculo.html"><button class="hora btn btn-info">19:45</button></a>
+            </h4> 
+        </div>
+        <div class="sala2">
+            <h4 style="font-family:Rajdhani;font-weight: bolder;">SALA 2
+                <a href="seleccionsillas/seleccionsillas_romper_el_círculo.html"><button class="hora btn btn-info">17:45</button></a>
+                <a href="seleccionsillas/seleccionsillas_romper_el_círculo.html"><button class="hora btn btn-info">19:00</button></a>
+            </h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="movie-title-poster">
+            <h2 style="font-family:Bebas Neue">ROMPER EL CÍRCULO</h2>
+            <img src="../Icons/RomperElCirculo_poster.jpg" alt="Cartel de la película">
+        </div>
+        <div class="synopsis">
+            <h3 style="font-family:Bebas Neue">SINOPSIS</h3>
+            <p>Lily Bloom se enamora de un neurocirujano tras mudarse a Boston con el objetivo de abrir su propio negocio. Sin embargo, el primer amor de su vida retoma el contacto con ella, y Lily ahora no sabe qué hacer.</p>
+            <a href="seleccionsillas/seleccionsillas_romper_el_círculo.html"><img src="../Icons/cine.png" alt="SALA"></a>
+        </div>
+        <div class="technical-sheet">
+            <h3 style="font-family:Bebas Neue">FICHA TÉCNICA</h3>
+            <p><strong style="font-family: Rajdhani; font-size: larger">Género:</strong> Drama, Romance.</p>
+            <p><strong style="font-family: Rajdhani; font-size: larger">Duración:</strong> 130 min.</p>
+            <p><strong style="font-family: Rajdhani; font-size: larger">Clasificación:</strong> Recomendada para Mayores de 12 años.</p>
+        </div>
+    </div>
+    
+    <div class="footer_template bg-dark">
+        <div class="footer_peliculas">
+            <h6 class="hg6_footer">PELÍCULAS</h6>
+            <a href="#" class="footer_links">BEETLEJUICE</a>
+            <a href="#" class="footer_links">HAUNTED HEART</a>
+            <a href="#" class="footer_links">ROMPER EL CÍRCULO</a>
+        </div>
+        <div class="footer_eventos">
+            <h6 class="hg6_footer">EVENTOS</h6>
+            <a href="#" class="footer_links">ALQUILER DE SALA</a>
+            <a href="#" class="footer_links">FUNCIONES ESPECIALES</a>
+            <a href="#" class="footer_links">LANZAMIENTO DE PRODUCTOS</a>
+        </div>
+        <div class="footer_about_us">
+            <h6 class="hg6_footer">SOBRE NOSOTROS</h6>
+            <a href="#" class="footer_links">¿QUIÉNES SOMOS?</a>
+            <a href="#" class="footer_links">¿NUESTRA MISIÓN?</a>
+            <a href="#" class="footer_links">¿NUESTRA VISIÓN?</a>
+        </div>
+        <div class="footer_follow_us">
+            <h6 class="hg6_footer">SIGUENOS</h6>
+            <a href="#" class="footer_links">FACEBOOK</a>
+            <a href="#" class="footer_links">INSTAGRAM</a>
+            <a href="#" class="footer_links">X</a>
+        </div>
+    </div>
+    
+    <script src="../bootstrap.min.js"></script>
+</body>
+</html>

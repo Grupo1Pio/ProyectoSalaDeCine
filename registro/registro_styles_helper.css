@@ -47,7 +47,8 @@ input {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid whitesmoke;
+    background-color: transparent;
     border-radius: 4px;
 }
 
@@ -69,6 +70,17 @@ button:hover {
     text-align: center;
     color: red;
 }
+#nombre{
+    font-family: "Rajdhani";
+    font-weight: bold;
+    font-size: 16px;
+}
+#email{
+    font-family: "Rajdhani";
+    font-weight: bold;
+    font-size: 16px;
+}
+
 
 .texto{
     font-family: "Rajdhani";

@@ -42,7 +42,8 @@ input {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid whitesmoke;
+    background-color: transparent;
     border-radius: 4px;
 }
 
@@ -53,7 +54,8 @@ label{
 
 a{
     font-family: "Rajdhani";
-    color: white
+    color: white;
+    font-weight: bold;
 }
 
 button {
@@ -73,6 +75,16 @@ button:hover {
 #mensaje {
     text-align: center;
     color: red;
+}
+
+#login-mensaje{
+    color: red;
+    text-align: center;
+}
+#email{
+    font-family: "Rajdhani";
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .texto{

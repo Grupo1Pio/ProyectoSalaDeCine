@@ -1,36 +1,37 @@
-// Diccionario para almacenar los usuarios registrados
-let usuariosRegistrados = {};
-
-// Función para manejar el evento de registro
-document.getElementById('registro-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe de manera predeterminada
+document.getElementById('registro-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evita el envío predeterminado del formulario
 
     // Obtener los valores del formulario
-    let nombre = document.getElementById('nombre').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
 
-    // Verificar si el email ya está registrado
-    if (usuariosRegistrados[email]) {
-        document.getElementById('mensaje').innerText = 'Este correo ya está registrado.';
-        return;
+    try {
+        // Realizar la solicitud a la API para registrar un nuevo usuario
+        const response = await fetch('http://localhost:3000/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password }) // Solo se envían username y password a la API
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            document.getElementById('mensaje').innerText = 'Registro exitoso. Redirigiendo al login...';
+            document.getElementById('registro-form').reset();
+            
+            // Redirigir al login después de un pequeño retraso
+            setTimeout(() => {
+                window.location.href = '../login/login.html';
+            }, 1500); // 1.5 segundos de retraso
+        } else {
+            // Mostrar mensaje de error si ocurre un problema
+            document.getElementById('mensaje').innerText = data.message || 'Error en el registro. Inténtalo de nuevo.';
+        }
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+        document.getElementById('mensaje').innerText = 'Error de conexión. Por favor, inténtalo más tarde.';
     }
-
-    // Registrar el nuevo usuario en el diccionario
-    usuariosRegistrados[email] = {
-        nombre: nombre,
-        password: password
-    };
-
-    // Mostrar mensaje de éxito y limpiar el formulario
-    document.getElementById('mensaje').innerText = 'Registro exitoso.';
-    document.getElementById('registro-form').reset();
-    
-    // Almacenar los usuarios en el localStorage para que persistan
-    localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-
-    // Redirigir al login después de un pequeño retraso
-    setTimeout(() => {
-        window.location.href = '../login/login.html';
-    }, 1500); // 1.5 segundos de retraso
 });

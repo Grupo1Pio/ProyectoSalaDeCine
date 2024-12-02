@@ -48,24 +48,38 @@ router.post('/login', async (req, res) => {
 })
 
 // Ruta para recibir y guardar la fecha de la película
+// ./routes/auth.js
 router.post('/save-movie-date', async (req, res) => {
-  const { userId, movieDate } = req.body
+  const { userId, movieDate, seatNumber } = req.body;
   try {
     // Verificar que los datos no estén vacíos
-    if (!userId || !movieDate) {
-      return res.status(400).json({ message: 'User ID and movie date are required' })
+    if (!userId || !movieDate || !seatNumber) {
+      return res.status(400).json({ message: 'User ID, movie date, and seat number are required' });
     }
 
-    // Guardar la fecha en la base de datos
+    // Obtener el nombre del usuario
+    const userResult = await pool.query('SELECT username FROM users WHERE id = $1', [userId]);
+    if (userResult.rows.length === 0) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const username = userResult.rows[0].username;
+
+    // Guardar la fecha, el usuario y el número de silla en la base de datos
     const result = await pool.query(
-      'INSERT INTO movie_dates (user_id, movie_date) VALUES ($1, $2) RETURNING *',
-      [userId, movieDate]
-    )
-    res.status(201).json({ message: 'Movie date saved', movieDate: result.rows[0] })
+      'INSERT INTO movie_dates (user_id, movie_date, seat_number) VALUES ($1, $2, $3) RETURNING *',
+      [userId, movieDate, seatNumber]
+    );
+
+    res.status(201).json({
+      message: `User ${username} reserved for ${movieDate} seat ${seatNumber}`,
+      reservation: result.rows[0],
+    });
   } catch (err) {
-    console.error('Error en el servidor:', err)
-    res.status(500).json({ error: err.message })
+    console.error('Error en el servidor:', err);
+    res.status(500).json({ error: err.message });
   }
-})
+});
+
 
 module.exports = router

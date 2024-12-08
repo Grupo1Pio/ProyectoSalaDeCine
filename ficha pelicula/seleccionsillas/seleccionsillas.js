@@ -6,12 +6,20 @@ $(document).ready(function () {
     });
 });
 
-// Obtener el userId del token JWT
-function getUserIdFromToken() {
+// Obtener el userId y nombre del token JWT
+function getUserInfoFromToken() {
     const token = localStorage.getItem('token');
     if (token) {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.userId;
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            console.log('Payload del token:', payload); // Verificar estructura del token en consola
+            return {
+                userId: payload.userId,
+                name: payload.username || 'Usuario' // Ajustar según el campo disponible
+            };
+        } catch (error) {
+            console.error('Error al decodificar el token:', error);
+        }
     }
     return null;
 }
@@ -28,10 +36,10 @@ document.querySelectorAll('.seat').forEach(seat => {
 document.getElementById('confirmarBtn').addEventListener('click', function () {
     const selectedDate = $('#datepicker').val();
     const selectedSeat = document.querySelector('.seat.selected');
-    const userId = getUserIdFromToken();
+    const userInfo = getUserInfoFromToken();
 
-    if (!userId) {
-        alert('No se encontró el ID de usuario. Por favor, inicia sesión.');
+    if (!userInfo || !userInfo.userId) {
+        alert('No se encontró la información del usuario. Por favor, inicia sesión.');
         return;
     }
 
@@ -45,12 +53,14 @@ document.getElementById('confirmarBtn').addEventListener('click', function () {
         return;
     }
 
+    // Preparar datos para la solicitud
     const data = {
-        userId: userId,
+        userId: userInfo.userId,
         movieDate: selectedDate,
         seatNumber: selectedSeat.id // Enviar el identificador de la silla seleccionada
     };
 
+    // Llamada a la API del backend para guardar la reserva
     fetch('http://localhost:3000/api/auth/save-movie-date', {
         method: 'POST',
         headers: {
@@ -65,7 +75,12 @@ document.getElementById('confirmarBtn').addEventListener('click', function () {
             return response.json();
         })
         .then(data => {
-            alert('Reserva confirmada: ' + JSON.stringify(data));
+            // Formatear la fecha recibida desde el backend
+            const fechaReserva = new Date(data.reservation.movie_date);
+            const fechaFormateada = `${fechaReserva.getDate().toString().padStart(2, '0')}-${(fechaReserva.getMonth() + 1).toString().padStart(2, '0')}-${fechaReserva.getFullYear()}`;
+
+            // Mostrar mensaje con el nombre del usuario devuelto por el backend
+            alert(`El usuario ${data.reservation.username} realizó con éxito la reserva de la silla ${data.reservation.seat_number} para la fecha ${fechaFormateada}.`);
         })
         .catch(error => {
             console.error('Error:', error);
